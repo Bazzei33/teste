@@ -48,10 +48,10 @@ class DAOProspect{
         $resultado = $sql->get_result();
 
         if($resultado->num_rows === 0){
-            $usuario->addUsuario(null, null, null, null, FALSE);
+            $prospect->addProspect(null, null, null, null, FALSE);
         }else{
             while($linha = $resultado->fetch_assoc()){
-                $usuario->addUsuario($linha['login'], $linha['nome'],
+                $prospect->addProspet($linha['login'], $linha['nome'],
                                     $linha['email'], $linha['celular'], $linha['facebook'], $linha['whatsapp'],
                                     TRUE);
             }
